@@ -1,41 +1,53 @@
 import * as React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
-const MainMenu = [
-  {
-    name: 'Home',
-    icon: <Image src="/icons/home.svg" alt="home-icon" width={24} height={24} />,
-  },
-  {
-    name: 'Portfolio',
-    icon: <Image src="/icons/portfolio.svg" alt="portfolio-icon" width={24} height={24} />,
-  },
-  {
-    name: 'Order',
-    icon: <Image src="/icons/order.svg" alt="order-icon" width={20} height={20} />,
-  },
-  {
-    name: 'Search',
-    icon: <Image src="/icons/search.svg" alt="search-icon" width={28} height={28} />,
-  },
-]
+import { Home, Portfolio, Order, Search, Profile } from '@components/sidebar/icons'
 
 export const Sidebar = () => {
+  const router = useRouter()
+
+  const MainMenu = [
+    {
+      name: 'Home',
+      icon: <Home isSelected={router?.asPath.includes('/home') ? true : false} />,
+      path: '/home',
+    },
+    {
+      name: 'Portfolio',
+      icon: <Portfolio isSelected={router?.asPath.includes('/portfolio') ? true : false} />,
+      path: '/portfolio',
+    },
+    {
+      name: 'Order',
+      icon: <Order isSelected={router?.asPath.includes('/order') ? true : false} />,
+      path: '/order',
+    },
+    {
+      name: 'Search',
+      icon: <Search isSelected={router?.asPath.includes('/search') ? true : false} />,
+      path: '/search/bbca',
+    },
+  ]
+
   return (
-    <aside className="fixed py-10 bg-white w-32 h-screen flex flex-col justify-between items-center">
-      <Image src="/pina-logo.svg" alt="pina-logo" width={18} height={38} />
+    <aside className="hidden lg:flex fixed py-10 z-20 bg-white w-32 h-screen flex-col justify-between items-center">
+      <Image src="/pina.svg" alt="pina-logo" width={18} height={38} />
       <div>
         {MainMenu.map((item, index) => (
-          <div className="flex flex-col items-center justify-center my-8" key={item.name}>
+          <button
+            onClick={() => router.push(item.path)}
+            className={`py-2 w-full flex flex-col items-center justify-center my-8`}
+            key={item.name}>
             {item.icon}
-            <p className="text-xs text-gray-350 mt-1">{item.name}</p>
-          </div>
+            <p className={`text-xs mt-1 ${router.asPath.includes(item.path) ? 'text-teal-350' : 'text-gray-350'}`}>{item.name}</p>
+          </button>
         ))}
         <div className="w-24 border-b border-gray-200" />
-        <div className="flex flex-col items-center justify-center my-8">
-          <Image src="/icons/profile.svg" alt="profile-icon" width={24} height={24} />
-          <p className="text-xs text-gray-350 mt-1">Profile</p>
-        </div>
+        <button onClick={() => router.push('/profile')} className={`w-full flex flex-col items-center justify-center my-8 py-2`}>
+          <Profile isSelected={router?.asPath.includes('/profile') ? true : false} />
+          <p className={`text-xs mt-1 ${router.asPath.includes('/profile') ? 'text-teal-350' : 'text-gray-350'}`}>Profile</p>
+        </button>
       </div>
       <Image src="/icons/logout.svg" alt="logout-icon" width={24} height={24} />
     </aside>

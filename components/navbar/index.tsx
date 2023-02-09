@@ -9,7 +9,7 @@ export const Navbar = () => {
   const userBuyingPower = React.useMemo(() => numberFormatter(user.buyingPower), [user.buyingPower])
 
   return (
-    <nav className="pl-48 h-20 fixed bg-white w-screen flex justify-between items-center px-16">
+    <nav className="hidden pl-48 z-10 h-20 fixed bg-white w-screen lg:flex justify-between items-center px-16">
       <div className="flex gap-6">
         <div className="relative flex items-center">
           <input className="text-sm py-2 rounded-lg w-96 bg-gray-150 px-4" placeholder="Ketik nama atau simbol saham" />

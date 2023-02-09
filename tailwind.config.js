@@ -10,7 +10,9 @@ module.exports = {
         gray: {
           100: '#E1E1E1',
           150: '#F5F7F7',
+          225: '#D8D8D8',
           250: '#AAAAAA',
+
           350: '#9E9E9E',
         },
         green: {
@@ -21,6 +23,9 @@ module.exports = {
         },
         orange: {
           350: '#FCB813',
+        },
+        teal: {
+          350: '#80DBCE',
         },
       },
     },

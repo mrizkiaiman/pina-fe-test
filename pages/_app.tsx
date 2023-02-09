@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Sidebar />
 
-      <div className="pt-28 pl-48 pr-16">
+      <div className="px-8 py-8 lg:pt-28 lg:pl-48 lg:pr-16">
         <Component {...pageProps} />
       </div>
     </div>

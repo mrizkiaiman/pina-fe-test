@@ -10,54 +10,65 @@ export const user = {
 export const BBCA = {
   code: 'BBCA',
   name: 'Bank Central Asia',
-  categories: [
-    {
-      icon: '/icons/categories/energi.svg',
-      name: 'Energi',
-    },
-    {
-      icon: '/icons/categories/batu-bara.svg',
-      name: 'Batu Bara',
-    },
-    {
-      icon: '/icons/categories/blue-chip.svg',
-      name: 'Blue Chip',
-    },
-  ],
-  currentValue: 7726.19,
-  differentiation: 48.83,
-  percentageDifference: 0.68,
-  pricePerStock: 1000000,
-  data: {
-    day: {
-      label: '1D',
-    },
-    month: {
-      label: '1M',
-    },
-    sixMonth: {
-      label: '6M',
-    },
-    ytd: {
-      label: 'YTD',
-    },
-    oneYear: {
-      label: '1Y',
-    },
-    fiveYear: {
-      label: '5Y',
-    },
-    all: {
-      label: 'All',
-    },
+  stockChart: {
+    code: 'BBCA',
+    name: 'Bank Central Asia',
+    categories: [
+      {
+        icon: '/icons/pages/search/categories/energi.svg',
+        name: 'Energi',
+      },
+      {
+        icon: '/icons/pages/search/categories/batu-bara.svg',
+        name: 'Batu Bara',
+      },
+      {
+        icon: '/icons/pages/search/categories/blue-chip.svg',
+        name: 'Blue Chip',
+      },
+    ],
+    currentValue: 7726.19,
+    differentiation: 48.83,
+    percentageDifference: 0.68,
+    pricePerStock: 1000000,
+    data: [
+      {
+        timeline: 'one-day',
+        label: '1D',
+      },
+      {
+        timeline: 'one-month',
+        label: '1M',
+      },
+      {
+        timeline: 'six-month',
+        label: '6M',
+      },
+      {
+        timeline: 'year-to-date',
+        label: 'YTD',
+      },
+      {
+        timeline: 'one-year',
+        label: '1Y',
+      },
+      {
+        timeline: 'five-year',
+        label: '5Y',
+      },
+      {
+        timeline: 'all',
+        label: 'All',
+      },
+    ],
   },
   statistics: {
     marketCap: 86682,
     pe: 6.7,
     pbv: 1.51,
     dividendYield: 8.12,
-    '52wHigh': 3270,
-    '52wLow': 1160,
+    fiftyTwoWeeksHigh: 3270,
+    fiftyTwoWeeksLow: 1160,
     fundamental: {
       cashEquivalent: 25859,
       totalAssets: 108326,

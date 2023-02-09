@@ -1,4 +1,4 @@
-export const numberFormatter = (input: number = 0, isRupiah?: boolean) => {
+export const numberFormatter = (input: number = 0, isBillion?: boolean) => {
   let result = ''
   let numberrev = input.toString().split('').reverse().join('')
   for (let i = 0; i < numberrev.length; i++) {
@@ -11,17 +11,17 @@ export const numberFormatter = (input: number = 0, isRupiah?: boolean) => {
     .reverse()
     .join('')}`
 
-  if (isRupiah) {
+  if (isBillion) {
     if (stringValue[0] === '-') {
       if (stringValue[1] === '.') {
         const updatedString = stringValue.slice(2, stringValue.length)
-        return `- Rp. ${updatedString}`
+        return `-${updatedString} B`
       }
       const updatedString = stringValue.slice(1, stringValue.length)
-      return `- Rp. ${updatedString}`
+      return `-${updatedString} B`
     }
 
-    return `Rp. ${stringValue}`
+    return `${stringValue} B`
   }
 
   return `${stringValue}`
