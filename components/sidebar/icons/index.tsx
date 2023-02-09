@@ -83,4 +83,6 @@ export const Profile: React.FC<SVGIconProps> = ({ isSelected }) => (
   </svg>
 )
 
-export default { Home, Order, Portfolio, Profile, Search }
+const Icons = { Home, Order, Portfolio, Profile, Search }
+
+export default Icons

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 
-import { StockLineChart } from '@pages/search/stock-chart/chart'
+import { StockLineChart } from '@app/components/_pages/search/stock-chart/chart'
 
 export interface StockChartProps {
   data: {
@@ -71,3 +71,5 @@ export const StockChart: React.FC<StockChartProps> = ({
     </div>
   )
 }
+
+export default StockChart

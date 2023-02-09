@@ -36,7 +36,7 @@ export const SidebarMobileView = () => {
   ]
 
   return (
-    <div className="flex z-20 items-center justify-center w-full bg-white py-4 fixed bottom-0 md:hidden border border-t-gray-150">
+    <div className="flex z-20 items-center justify-center w-full bg-white py-4 fixed bottom-0 lg:hidden border border-t-gray-150">
       {MainMenu.map((item, index) => (
         <button onClick={() => router.push(item.path)} className={`w-full flex flex-col items-center justify-center`} key={item.name}>
           {item.icon}

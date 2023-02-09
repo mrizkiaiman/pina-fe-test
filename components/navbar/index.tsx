@@ -5,8 +5,8 @@ import { user } from '@app/data'
 import { numberFormatter } from '@app/utils/formatter/number'
 
 export const Navbar = () => {
-  const userPortfolio = React.useMemo(() => numberFormatter(user.portfolio), [user.portfolio])
-  const userBuyingPower = React.useMemo(() => numberFormatter(user.buyingPower), [user.buyingPower])
+  const userPortfolio = React.useMemo(() => numberFormatter(user.portfolio), [])
+  const userBuyingPower = React.useMemo(() => numberFormatter(user.buyingPower), [])
 
   return (
     <nav className="lg:pl-48 md:pl-24 z-10 h-20 fixed bg-white w-full flex lg:justify-between items-center px-4 lg:px-16">

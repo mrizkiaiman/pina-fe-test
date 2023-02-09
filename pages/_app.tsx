@@ -1,10 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import localFont from '@next/font/local'
 
 import { Sidebar } from '@components/sidebar'
 import Navbar from '@app/components/navbar'
-import SidebarMobileView from '@app/components/sidebar/mobile-view'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

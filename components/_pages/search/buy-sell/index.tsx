@@ -1,20 +1,25 @@
 import * as React from 'react'
+import { useModal } from '@app/utils/hooks/useModal'
+import { numberFormatter } from '@app/utils/formatter/number'
 
 import Image from 'next/image'
+import { Modal } from '@components/modal'
 import { SectionPointHorizontal } from '@app/components/section-point-horizontal'
-import { numberFormatter } from '@app/utils/formatter/number'
 
 export interface BuySellSectionProps {
   userBalance: string
+  pricePerStock: number
 }
 
-export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance }) => {
+export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance, pricePerStock }) => {
+  const { modalState, toggleModal } = useModal()
+
   const [selectedTab, setSelectedTab] = React.useState<'beli' | 'jual'>('beli')
   const defaultTabStyle = 'cursor-pointer w-1/2 flex items-center justify-center border-b-gray-100 border-b-[1px]'
   const selectedTabStyle = 'cursor-pointer w-1/2 flex items-center justify-center border-b-2 border-orange-350 active'
 
   const [jumlahLot, setJumlahLot] = React.useState(1)
-  const formattedPricePerStock = React.useMemo(() => `IDR ${numberFormatter(jumlahLot * 1000000)}`, [jumlahLot])
+  const formattedPricePerStock = React.useMemo(() => `IDR ${numberFormatter(jumlahLot * pricePerStock)}`, [jumlahLot, pricePerStock])
 
   const decreaseJumlahLot = () => {
     if (jumlahLot > 1) setJumlahLot(jumlahLot - 1)
@@ -69,7 +74,7 @@ export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance }) =
             <div className="border-b-[1px] w-full border-gray-100 my-2" />
             <SectionPointHorizontal label="Total Pembelian" value={formattedPricePerStock} />
             <div className="border-b-[1px] w-full border-gray-100 my-2" />
-            <button className="bg-yellow-650 rounded-lg flex items-center justify-center h-12 w-full mt-4">
+            <button onClick={toggleModal} className="bg-yellow-650 rounded-lg flex items-center justify-center h-12 w-full mt-4">
               <p className="font-bold">Beli</p>
             </button>
           </>
@@ -79,6 +84,7 @@ export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance }) =
           </div>
         )}
       </div>
+      <Modal modalState={modalState} toggleModal={toggleModal} />
     </>
   )
 }

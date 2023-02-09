@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { StatistikSection, StatistikSectionProps } from '@pages/search/information/statistik'
-import { BeritaSection } from '@app/pages/search/information/berita'
-import { CorpActionSection } from '@app/pages/search/information/corp-action'
-import { LaporanKeuanganSection } from '@app/pages/search/information/laporan-keuangan'
-import { TentangPerusahaanSection } from '@app/pages/search/information/tentang perusahaan'
+import { StatistikSection, StatistikSectionProps } from '@app/components/_pages/search/information/statistik'
+import { BeritaSection } from '@app/components/_pages/search/information/berita'
+import { CorpActionSection } from '@app/components/_pages/search/information/corp-action'
+import { LaporanKeuanganSection } from '@app/components/_pages/search/information/laporan-keuangan'
+import { TentangPerusahaanSection } from '@app/components/_pages/search/information/tentang perusahaan'
 
 export const InformationSection: React.FC<StatistikSectionProps> = ({ data }) => {
   const dataPerMenu = ['Statistik', 'Corp Action', 'Berita', 'Laporan Keuangan', 'Tentang Perusahaan']
@@ -11,7 +11,7 @@ export const InformationSection: React.FC<StatistikSectionProps> = ({ data }) =>
 
   return (
     <div>
-      <div className="flex flex-col lg:flex-row gap-2 items-center">
+      <div className="flex flex-col lg:flex-row gap-2 items-start">
         {dataPerMenu.map((item, index) => (
           <button
             onClick={() => setSelectedMenu(item)}

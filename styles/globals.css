@@ -86,8 +86,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-input {
+h6 {
   overflow-wrap: break-word;
   font-family: Gotham Rounded;
 }
@@ -97,4 +96,8 @@ input {
 #root,
 #__next {
   isolation: isolate;
+}
+
+input {
+  font-family: Gotham Rounded;
 }
