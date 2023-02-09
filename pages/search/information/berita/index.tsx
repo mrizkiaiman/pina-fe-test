@@ -5,3 +5,5 @@ export const BeritaSection = () => {
     </div>
   )
 }
+
+export default BeritaSection

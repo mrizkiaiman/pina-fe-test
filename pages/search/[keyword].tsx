@@ -9,15 +9,12 @@ import { StockChart } from '@app/pages/search/stock-chart'
 
 export const Search = () => {
   const userBalance = React.useMemo(() => numberFormatter(user.balance.bbca), [user.balance.bbca])
-  const dataPerMenu = ['Statistik', 'Corp Action', 'Berita', 'Laporan Keuangan', 'Tentang Perusahaan']
-
-  const [selectedMenu, setSelectedMenu] = React.useState('Statistik')
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 justify-center w-full">
-      <section className="w-full lg:w-4/6 bg-red-250 flex flex-col gap-8">
+    <div className="flex flex-col xl:flex-row gap-8 items-center xl:items-start justify-center w-full pt-24 pb-24 md:pb-0 md:pt-0">
+      <section className="w-full xl:w-4/6 flex flex-col gap-8">
         <StockChart data={BBCA.stockChart} />
-        <div className="rounded-2xl w-full bg-white p-8 mb-16">
+        <div className="rounded-2xl w-full bg-white p-8 md:mb-16">
           <InformationSection data={BBCA.statistics} />
         </div>
       </section>

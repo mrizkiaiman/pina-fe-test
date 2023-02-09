@@ -5,3 +5,5 @@ export const CorpActionSection = () => {
     </div>
   )
 }
+
+export default CorpActionSection

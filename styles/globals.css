@@ -2,11 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  p {
-    @apply font-sans;
-  }
-  /* ... */
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('../public/fonts/GothamRnd-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('../public/fonts/GothamRnd-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('../public/fonts/GothamRnd-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 /*
@@ -63,14 +80,16 @@ select {
   8. Avoid text overflows
 */
 
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+input {
   overflow-wrap: break-word;
-  font-family: SF Pro Display, SF Pro Icons, Helvettica Neue, Helvettica, Arial, sans-serif;
+  font-family: Gotham Rounded;
 }
 /*
   9. Create a root stacking context

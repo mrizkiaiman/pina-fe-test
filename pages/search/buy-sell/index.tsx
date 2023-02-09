@@ -58,18 +58,16 @@ export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance }) =
               </div>
               <p className="text-xs text-gray-350 mt-4 mb-2">Harga Per Saham</p>
               <div className="relative flex justify-center items-center mb-8">
-                {/* <Image className="absolute left-11" src="/icons/pages/search/minus.svg" width={24} height={24} alt="minus-icon" /> */}
                 <input
                   className="font-bold border border-gray-100 text-sm h-12 rounded-lg w-80 bg-white-150 text-center px-4"
                   placeholder="Ketik nama atau simbol saham"
                   value={formattedPricePerStock}
                   disabled
                 />
-                {/* <Image className="absolute right-11" src="/icons/pages/search/plus.svg" width={24} height={24} alt="plus-icon" /> */}
               </div>
             </div>
             <div className="border-b-[1px] w-full border-gray-100 my-2" />
-            <SectionPointHorizontal label="Total Pembelian" value="158.000" />
+            <SectionPointHorizontal label="Total Pembelian" value={formattedPricePerStock} />
             <div className="border-b-[1px] w-full border-gray-100 my-2" />
             <button className="bg-yellow-650 rounded-lg flex items-center justify-center h-12 w-full mt-4">
               <p className="font-bold">Beli</p>

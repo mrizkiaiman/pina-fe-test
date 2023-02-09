@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Image from 'next/image'
 
+import { StockLineChart } from '@pages/search/stock-chart/chart'
+
 export interface StockChartProps {
   data: {
     code: string
@@ -62,7 +64,10 @@ export const StockChart: React.FC<StockChartProps> = ({
           </button>
         ))}
       </div>
-      <div className="h-64 mt-4 bg-red-100 rounded-lg w-full" />
+      {/* <div className="h-64 mt-4 bg-red-100 rounded-lg w-full" /> */}
+      <div className="flex items-center justify-center pt-8 px-4 w-full">
+        <StockLineChart />
+      </div>
     </div>
   )
 }

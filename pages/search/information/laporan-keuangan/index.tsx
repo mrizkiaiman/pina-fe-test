@@ -5,3 +5,5 @@ export const LaporanKeuanganSection = () => {
     </div>
   )
 }
+
+export default LaporanKeuanganSection

@@ -5,3 +5,5 @@ export const TentangPerusahaanSection = () => {
     </div>
   )
 }
+
+export default TentangPerusahaanSection
