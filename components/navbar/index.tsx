@@ -9,7 +9,11 @@ export const Navbar = () => {
     <nav className="lg:pl-48 md:pl-24 z-10 h-20 fixed bg-white w-full flex lg:justify-between items-center px-4 lg:px-16">
       <div className="flex items-center justify-center w-3/4">
         <div className="relative flex items-center">
-          <input className="text-sm py-2 rounded-lg w-36 md:w-96 bg-gray-150 px-4" placeholder="Ketik nama atau simbol saham" />
+          <input
+            maxLength={16}
+            className="text-sm py-2 rounded-lg w-36 md:w-96 bg-gray-150 px-4"
+            placeholder="Ketik nama atau simbol saham"
+          />
           <Image className="hidden md:block absolute right-2" src="/icons/search.svg" width={24} height={24} alt="search-icon" />
         </div>
         <div className="ml-4">

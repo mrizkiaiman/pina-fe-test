@@ -55,7 +55,11 @@ export const BuySellSection: React.FC<BuySellSectionProps> = ({ userBalance, pri
                   className="border border-gray-100 text-sm h-12 rounded-lg w-80 bg-white-150 text-center px-4"
                   placeholder="Ketik nama atau simbol saham"
                   value={jumlahLot}
-                  onChange={e => setJumlahLot(Number(e.target.value))}
+                  maxLength={5}
+                  onChange={e => {
+                    const result = e.target.value.replace(/\D/g, '')
+                    setJumlahLot(Number(result))
+                  }}
                 />
                 <button onClick={increaseJumlahLot} className="absolute right-11">
                   <Image className="h-auto w-auto" src="/icons/pages/search/plus.svg" width={24} height={24} alt="plus-icon" />
