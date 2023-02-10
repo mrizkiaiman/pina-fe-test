@@ -1,4 +1,4 @@
-### Demo: **[pina-fe-test.mrizkiaiman.com](https://pina-fe-test.vercel.app)**
+### Demo: **[pina-fe-test.vercel.app](https://pina-fe-test.vercel.app)**
 ---
 
 <img width="1511" alt="Screenshot 2023-02-10 at 18 22 04" src="https://user-images.githubusercontent.com/53157683/218080930-9bcd9688-e062-4640-a5b4-2fb0d86f067f.png">
