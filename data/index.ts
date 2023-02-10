@@ -33,36 +33,43 @@ export const BBCA = {
     differentiation: 48.83,
     percentageDifference: 0.68,
     pricePerStock: 1000000,
-    data: [
-      {
-        timeline: 'one-day',
+    data: {
+      '1D': {
+        id: 'one-day',
         label: '1D',
+        timeline: ['09.00', '11.00', '13.00', '15.00', '17.00'],
       },
-      {
-        timeline: 'one-month',
+      '1M': {
+        id: 'one-month',
         label: '1M',
+        timeline: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
       },
-      {
-        timeline: 'six-month',
+      '6M': {
+        id: 'six-month',
         label: '6M',
+        timeline: ['Sept', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
       },
-      {
-        timeline: 'year-to-date',
+      YTD: {
+        id: 'year-to-date',
         label: 'YTD',
+        timeline: ['Jan', 'Feb'],
       },
-      {
-        timeline: 'one-year',
+      '1Y': {
+        id: 'one-year',
         label: '1Y',
+        timeline: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
       },
-      {
-        timeline: 'five-year',
+      '5Y': {
+        id: 'five-year',
         label: '5Y',
+        timeline: ['2019', '2020', '2021', '2022', '2023'],
       },
-      {
-        timeline: 'all',
+      All: {
+        id: 'all',
         label: 'All',
+        timeline: ['2000', '2005', '2010', '2015', '2020', '2023'],
       },
-    ],
+    },
   },
   statistics: {
     marketCap: 86682,

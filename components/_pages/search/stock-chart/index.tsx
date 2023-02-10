@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 
-import { StockLineChart } from '@components/_pages/search/stock-chart/chart'
+import { StockLineChart } from '@app/components/_pages/search/stock-chart/chart'
 
 export interface StockChartProps {
   data: {
@@ -15,17 +15,53 @@ export interface StockChartProps {
     differentiation: number
     percentageDifference: number
     pricePerStock: number
-    data: Array<{
-      timeline: string
-      label: string
-    }>
+    data: {
+      '1D': {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      '1M': {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      '6M': {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      YTD: {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      '1Y': {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      '5Y': {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+      All: {
+        id: string
+        label: string
+        timeline: Array<string>
+      }
+    }
   }
 }
 
+type Timeline = '1D' | '1M' | '6M' | 'YTD' | '1Y' | '5Y' | 'All'
+
 export const StockChart: React.FC<StockChartProps> = ({
-  data: { categories, code, currentValue, data, differentiation, name, percentageDifference, pricePerStock },
+  data: { categories, code, currentValue, data, differentiation, name, percentageDifference },
 }) => {
-  const [selectedTimeline, setSelectedTimeline] = React.useState('YTD')
+  const [selectedTimeline, setSelectedTimeline] = React.useState<Timeline>('YTD')
+  const timelineMenu = Object.keys(data) as Array<Timeline>
 
   return (
     <div className="rounded-2xl w-full bg-white p-8">
@@ -53,20 +89,19 @@ export const StockChart: React.FC<StockChartProps> = ({
         ))}
       </div>
       <div className="flex gap-2 mt-4">
-        {data.map((item, index) => (
+        {timelineMenu.map((item, index) => (
           <button
-            onClick={() => setSelectedTimeline(item.label)}
+            onClick={() => setSelectedTimeline(item)}
             className={`${
-              selectedTimeline === item.label ? 'bg-yellow-650' : 'bg-gray-150'
+              selectedTimeline === item ? 'bg-yellow-650' : 'bg-gray-150'
             }  flex items-center justify-center py-2 w-32 rounded-xl`}
-            key={item.label}>
-            <p className="text-xs lg:text-sm">{item.label}</p>
+            key={item}>
+            <p className="text-xs lg:text-sm">{item}</p>
           </button>
         ))}
       </div>
-      {/* <div className="h-64 mt-4 bg-red-100 rounded-lg w-full" /> */}
-      <div className="flex items-center justify-center pt-8 px-4 w-full">
-        <StockLineChart />
+      <div className="flex items-center justify-center pt-8 w-full">
+        <StockLineChart labels={data[selectedTimeline].timeline} />
       </div>
     </div>
   )
