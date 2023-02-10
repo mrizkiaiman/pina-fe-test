@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 export const BeritaSection = () => {
   return (
     <div className="flex items-center w-full h-64 bg-white">
@@ -6,4 +8,4 @@ export const BeritaSection = () => {
   )
 }
 
-export default BeritaSection
+export default React.memo(BeritaSection)

@@ -1,6 +1,6 @@
 import { ORDER_PAGE_HEAD } from '@app/constants/head'
 
-import { PinaHead } from '@components/head/'
+import { PinaHead } from '@components/head'
 
 export const Order = () => {
   return (

@@ -1,3 +1,5 @@
+import * as React from 'react'
+
 export const TentangPerusahaanSection = () => {
   return (
     <div className="flex items-center w-full h-64 bg-white">
@@ -6,4 +8,4 @@ export const TentangPerusahaanSection = () => {
   )
 }
 
-export default TentangPerusahaanSection
+export default React.memo(TentangPerusahaanSection)

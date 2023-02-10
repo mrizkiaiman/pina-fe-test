@@ -1,13 +1,10 @@
 import * as React from 'react'
-import Image from 'next/image'
-
 import { user } from '@app/data'
 import { numberFormatter } from '@app/utils/formatter/number'
 
-export const Navbar = () => {
-  const userPortfolio = React.useMemo(() => numberFormatter(user.portfolio), [])
-  const userBuyingPower = React.useMemo(() => numberFormatter(user.buyingPower), [])
+import Image from 'next/image'
 
+export const Navbar = () => {
   return (
     <nav className="lg:pl-48 md:pl-24 z-10 h-20 fixed bg-white w-full flex lg:justify-between items-center px-4 lg:px-16">
       <div className="flex items-center justify-center w-3/4">
@@ -17,11 +14,11 @@ export const Navbar = () => {
         </div>
         <div className="ml-4">
           <p className="text-gray-350 lg:text-sm text-xs">Portfolio</p>
-          <p className="font-bold text-sm lg:text-base">{userPortfolio}</p>
+          <p className="font-bold text-sm lg:text-base">{numberFormatter(user.portfolio)}</p>
         </div>
         <div className="ml-2 lg:ml-24 hidden md:block">
           <p className="text-gray-350 lg:text-sm text-xs">Buying Power</p>
-          <p className="font-bold text-sm lg:text-base">{userBuyingPower}</p>
+          <p className="font-bold text-sm lg:text-base">{numberFormatter(user.buyingPower)}</p>
         </div>
       </div>
 

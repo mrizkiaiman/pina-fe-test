@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
 import { Sidebar } from '@components/sidebar'
-import Navbar from '@app/components/navbar'
+import Navbar from '@components/navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

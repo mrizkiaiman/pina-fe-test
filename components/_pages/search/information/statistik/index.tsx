@@ -2,7 +2,7 @@ import * as React from 'react'
 import { numberFormatter } from '@app/utils/formatter/number'
 
 import { SubSection } from '@components/sub-section'
-import { SectionPointHorizontal } from '@app/components/section-point-horizontal'
+import { SectionPointHorizontal } from '@components/section-point-horizontal'
 
 export interface StatistikSectionProps {
   data: {
@@ -36,14 +36,17 @@ export const StatistikSection: React.FC<StatistikSectionProps> = ({
   data: { marketCap, pe, pbv, dividendYield, fiftyTwoWeeksHigh, fiftyTwoWeeksLow, fundamental, earning, profitabilitas },
 }) => {
   //Main
-  const formattedMarketCap = React.useMemo(() => numberFormatter(marketCap, true), [marketCap])
+  const formattedMarketCap = React.useMemo(() => numberFormatter(marketCap, 'billion'), [marketCap])
   const formattedFiftyTwoWeeksHigh = React.useMemo(() => numberFormatter(fiftyTwoWeeksHigh), [fiftyTwoWeeksHigh])
   const formattedFiftyTwoWeeksLow = React.useMemo(() => numberFormatter(fiftyTwoWeeksLow), [fiftyTwoWeeksLow])
   //Fundamental
-  const formattedCashEquivalent = React.useMemo(() => numberFormatter(fundamental.cashEquivalent, true), [fundamental.cashEquivalent])
-  const formattedTotalAssets = React.useMemo(() => numberFormatter(fundamental.totalAssets, true), [fundamental.totalAssets])
-  const formattedTotalLiabilitas = React.useMemo(() => numberFormatter(fundamental.totalLiabilitas, true), [fundamental.totalLiabilitas])
-  const formattedTotalEquity = React.useMemo(() => numberFormatter(fundamental.totalEquity, true), [fundamental.totalEquity])
+  const formattedCashEquivalent = React.useMemo(() => numberFormatter(fundamental.cashEquivalent, 'billion'), [fundamental.cashEquivalent])
+  const formattedTotalAssets = React.useMemo(() => numberFormatter(fundamental.totalAssets, 'billion'), [fundamental.totalAssets])
+  const formattedTotalLiabilitas = React.useMemo(
+    () => numberFormatter(fundamental.totalLiabilitas, 'billion'),
+    [fundamental.totalLiabilitas],
+  )
+  const formattedTotalEquity = React.useMemo(() => numberFormatter(fundamental.totalEquity, 'billion'), [fundamental.totalEquity])
 
   const mainSection = [
     {
@@ -143,4 +146,4 @@ export const StatistikSection: React.FC<StatistikSectionProps> = ({
   )
 }
 
-export default StatistikSection
+export default React.memo(StatistikSection)

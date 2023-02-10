@@ -1,3 +1,5 @@
+import { numberFormatter } from '@app/utils/formatter/number'
+
 export const user = {
   name: 'M. Rizki Aiman',
   portfolio: 130431449,
@@ -87,4 +89,32 @@ export const BBCA = {
       roe: 22.6,
     },
   },
+}
+
+export const modal = {
+  data: [
+    {
+      label: 'Stock',
+      value: 'ADRO',
+    },
+    {
+      label: 'Action',
+      value: 'Buy',
+      onClickValue: () => console.log('Buy!'),
+    },
+    {
+      label: 'Harga',
+      value: 156,
+    },
+    {
+      label: 'Lot',
+      value: 1,
+    },
+    {
+      label: 'Biaya',
+      value: numberFormatter(2500),
+    },
+  ],
+  no_order: 'PI213123123DHEX',
+  total: 158000,
 }

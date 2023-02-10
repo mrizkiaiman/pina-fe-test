@@ -4,9 +4,9 @@ import { useRouter } from 'next/router'
 import { numberFormatter } from '@app/utils/formatter/number'
 
 import Head from 'next/head'
-import { BuySellSection } from '@app/components/_pages/search/buy-sell'
-import { InformationSection } from '@app/components/_pages/search/information'
-import { StockChart } from '@app/components/_pages/search/stock-chart'
+import { BuySellSection } from '@components/_pages/search/buy-sell'
+import { InformationSection } from '@components/_pages/search/information'
+import { StockChart } from '@components/_pages/search/stock-chart'
 
 export const Search = () => {
   const router = useRouter()
@@ -23,7 +23,7 @@ export const Search = () => {
       <div className="flex flex-col xl:flex-row gap-8 items-center xl:items-start justify-center w-full pt-24 lg:pt-0 pb-24 xl:pb-0">
         <section className="w-full xl:w-4/6 flex flex-col gap-8">
           <StockChart data={BBCA.stockChart} />
-          <div className="rounded-2xl w-full bg-white p-8 md:mb-16">
+          <div className="rounded-2xl w-full bg-white p-8 xl:mb-16">
             <InformationSection data={BBCA.statistics} />
           </div>
         </section>

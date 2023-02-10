@@ -1,9 +1,10 @@
 import * as React from 'react'
-import { StatistikSection, StatistikSectionProps } from '@app/components/_pages/search/information/statistik'
-import { BeritaSection } from '@app/components/_pages/search/information/berita'
-import { CorpActionSection } from '@app/components/_pages/search/information/corp-action'
-import { LaporanKeuanganSection } from '@app/components/_pages/search/information/laporan-keuangan'
-import { TentangPerusahaanSection } from '@app/components/_pages/search/information/tentang perusahaan'
+
+import { StatistikSection, StatistikSectionProps } from '@components/_pages/search/information/statistik'
+import { BeritaSection } from '@components/_pages/search/information/berita'
+import { CorpActionSection } from '@components/_pages/search/information/corp-action'
+import { LaporanKeuanganSection } from '@components/_pages/search/information/laporan-keuangan'
+import { TentangPerusahaanSection } from '@components/_pages/search/information/tentang perusahaan'
 
 export const InformationSection: React.FC<StatistikSectionProps> = ({ data }) => {
   const dataPerMenu = ['Statistik', 'Corp Action', 'Berita', 'Laporan Keuangan', 'Tentang Perusahaan']

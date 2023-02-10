@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { SectionPointHorizontal } from '@app/components/section-point-horizontal'
-import { SectionPointHorizontalProps } from '@app/components/section-point-horizontal'
+import { SectionPointHorizontal } from '@components/section-point-horizontal'
+import { SectionPointHorizontalProps } from '@components/section-point-horizontal'
 
 export interface SubSectionProps {
   title: string
